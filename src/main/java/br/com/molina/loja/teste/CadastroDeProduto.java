@@ -20,8 +20,10 @@ public class CadastroDeProduto {
         System.out.println(p.getPreco());
 
         List<Produto> todos = produtoDao.buscarTodos();
-        todos.forEach(p2 -> System.out.println(p2.getNome()) );
+        todos.forEach(p2 -> System.out.println(p.getNome()) );
 
+        List<Produto> todos1 = produtoDao.buscarPorNome("Xiomi Redmi");
+        todos1.forEach(p3 -> System.out.println(p.getNome()) );
 
     }
 
