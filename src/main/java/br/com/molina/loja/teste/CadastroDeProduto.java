@@ -1,6 +1,8 @@
 package br.com.molina.loja.teste;
 
+import br.com.molina.loja.dao.CategoriaDao;
 import br.com.molina.loja.dao.ProdutoDao;
+import br.com.molina.loja.modelo.Categoria;
 import br.com.molina.loja.modelo.Produto;
 import br.com.molina.loja.util.JPAUtil;
 
@@ -9,16 +11,18 @@ import java.math.BigDecimal;
 
 public class CadastroDeProduto {
     public static void main(String[] args) {
-        Produto celular = new Produto();
-        celular.setNome("Xiomi Redmi");
-        celular.setDescricao("Muito legal");
-        celular.setPreco(new BigDecimal("800"));
+        Categoria celulares = new Categoria("CELULARES");
+        Produto celular = new Produto("Xiomi Redmi", "Muito legal", new BigDecimal("800"), celulares);
 
         EntityManager em = JPAUtil.getEntityManager();
-        ProdutoDao dao = new ProdutoDao(em);
+        ProdutoDao produtoDao = new ProdutoDao(em);
+        CategoriaDao categoriaDao = new CategoriaDao(em);
 
         em.getTransaction().begin();
-        dao.cadastrar(celular);
+
+        categoriaDao.cadastrar(celulares);
+        produtoDao.cadastrar(celular);
+
         em.getTransaction().commit();
         em.close();
     }
