@@ -10,7 +10,7 @@ import javax.persistence.EntityManager;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class CadastroDeProduto {
+public class CadastroDeProduto1 {
     public static void main(String[] args) {
         cadastrarProduto();
         EntityManager em = JPAUtil.getEntityManager();

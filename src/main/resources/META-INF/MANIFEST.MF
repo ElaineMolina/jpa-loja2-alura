@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Main-Class: br.com.molina.loja.teste.CadastroDeProduto
+Main-Class: br.com.molina.loja.teste.CadastroDeProduto1
 
 
 
