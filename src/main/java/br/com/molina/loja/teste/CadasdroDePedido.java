@@ -12,7 +12,6 @@ import javax.persistence.EntityManager;
 import java.math.BigDecimal;
 import java.util.List;
 
-
 public class CadasdroDePedido {
     public static void main(String[] args) {
       popularBancoDeDados();

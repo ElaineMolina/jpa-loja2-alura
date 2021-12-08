@@ -26,17 +26,17 @@ public class PedidoDao {
         return em.createQuery(jpql, BigDecimal.class)
                 .getSingleResult();
     }
-    public List<RelatorioDeVendasVo> relatorioDeVendas(){
+    public List<RelatorioDeVendasVo> relatorioDeVendas() {
         String jpql = "SELECT new br.com.molina.loja.vo.RelatorioDeVendasVo("
-            + "produto.nome, "
-            + "SUM(item.quantidade), "
-            + "MAX(pedido.data)) "
-            + "FROM Pedido pedido "
-            + "JOIN pedido.itens item "
-            + "JOIN item.produto produto "
-            + "GROUP BY produto.nome "
-            + "ORDER BY item.quantidade DESC";
+                + "produto.nome, "
+                + "SUM(item.quantidade), "
+                + "MAX(pedido.data)) "
+                + "FROM Pedido pedido "
+                + "JOIN pedido.itens item "
+                + "JOIN item.produto produto "
+                + "GROUP BY produto.nome "
+                + "ORDER BY item.quantidade DESC";
         return em.createQuery(jpql, RelatorioDeVendasVo.class)
-            .getResultList();
+                .getResultList();
     }
 }
