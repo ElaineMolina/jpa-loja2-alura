@@ -30,7 +30,8 @@ public class CadasdroDePedido {
 
         em.getTransaction().commit();
 
-
+        BigDecimal totalVendido = pedidoDao.valorTotalVendido();
+        System.out.println("VALOR TOTAL: " + totalVendido);
 
     }
     private static void popularBancoDeDados() {
