@@ -1,6 +1,6 @@
 package br.com.molina.loja.modelo;
 
-
+//novo repositório jpa-loja2-alura
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
