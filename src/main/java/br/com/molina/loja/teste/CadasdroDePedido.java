@@ -19,10 +19,10 @@ public class CadasdroDePedido {
         ProdutoDao produtoDao = new ProdutoDao(em);
         ClienteDao clienteDao = new ClienteDao(em);
 
-        Produto produto = produtoDao.buscarPorId(1l);
-        Produto produto2 = produtoDao.buscarPorId(2l);
-        Produto produto3 = produtoDao.buscarPorId(3l);
-        Cliente cliente = clienteDao.buscarPorId(1l);
+        Produto produto = produtoDao.buscarPorId(1L);
+        Produto produto2 = produtoDao.buscarPorId(2L);
+        Produto produto3 = produtoDao.buscarPorId(3L);
+        Cliente cliente = clienteDao.buscarPorId(1L);
 
         em.getTransaction().begin();
 

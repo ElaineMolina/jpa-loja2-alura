@@ -8,6 +8,8 @@ import java.time.LocalDate;
 @SuppressWarnings("SillyAssignment")
 @Entity
 @Table(name = "produtos")
+@NamedQuery(name = "Produto.produtosPorCategoria",
+        query = "SELECT p FROM Produto p WHERE p.categoria.nome = :nome ")
 public class Produto {
 
     @Id
