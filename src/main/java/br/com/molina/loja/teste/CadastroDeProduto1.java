@@ -3,6 +3,7 @@ package br.com.molina.loja.teste;
 import br.com.molina.loja.dao.CategoriaDao;
 import br.com.molina.loja.dao.ProdutoDao;
 import br.com.molina.loja.modelo.Categoria;
+import br.com.molina.loja.modelo.CategoriaId;
 import br.com.molina.loja.modelo.Produto;
 import br.com.molina.loja.util.JPAUtil;
 
@@ -46,6 +47,7 @@ public class CadastroDeProduto1 {
         produtoDao.cadastrar(celular);
 
         em.getTransaction().commit();
+        em.find(Categoria.class, new CategoriaId("CELULARES", "xpto"));
         em.close();
     }
 
